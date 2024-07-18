@@ -127,4 +127,15 @@ alias pvd='deactivate'
 
 # https://github.com/jgraph/docker-drawio
 alias drawio="docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443 jgraph/drawio"
+alias fmeworkbench="xhost +local:docker \
+    && docker run \
+        --rm \
+        --detach \
+        --user ufme \
+        --env DISPLAY \
+        --device /dev/dri \
+        --volume /tmp/.X11-unix:/tmp/.X11-unix \
+        --volume /dev/shm:/dev/shm \
+        --volume /home/aross/dev/fme_workbench:/home/ufme \
+        fme-desktop"
 
